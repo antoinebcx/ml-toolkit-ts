@@ -1,0 +1,16 @@
+{
+    "name": "@ml-toolkit-ts/xgboost",
+    "version": "1.0.0",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "files": ["dist"],
+    "scripts": {
+      "build": "tsc"
+    },
+    "peerDependencies": {
+      "typescript": ">=4.0.0"
+    },
+    "publishConfig": {
+      "access": "public"
+    }
+  }
