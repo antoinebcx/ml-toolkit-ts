@@ -1,17 +1,17 @@
 {
-    "name": "ml-toolkit-ts",
-    "version": "1.0.0",
-    "main": "dist/index.js",
-    "types": "dist/index.d.ts",
-    "files": ["dist"],
-    "scripts": {
-      "build": "tsc"
-    },
-    "dependencies": {
-      "@ml-toolkit-ts/xgboost": "^1.0.0",
-      "@ml-toolkit-ts/preprocessing": "^1.0.0"
-    },
-    "publishConfig": {
-      "access": "public"
-    }
+  "name": "ml-toolkit-ts",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsc"
+  },
+  "dependencies": {
+    "@ml-toolkit-ts/xgboost": "^1.0.0",
+    "@ml-toolkit-ts/preprocessing": "^1.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
+}

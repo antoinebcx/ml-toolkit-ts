@@ -40,7 +40,7 @@ export class XGBoostPredictor {
       this.baseScore = parseFloat(this.model.learner.attributes?.base_score || '0.5');
 
     } catch (e) {
-      throw new Error(`Failed to initialize XGBoost model: ${e.message}`);
+        throw new Error(`Failed to initialize XGBoost model: ${e instanceof Error ? e.message : 'Unknown error'}`);
     }
   }
 
