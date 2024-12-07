@@ -1,16 +1,21 @@
 {
-    "name": "@ml-toolkit-ts/preprocessing",
-    "version": "1.0.0",
-    "main": "dist/index.js",
-    "types": "dist/index.d.ts",
-    "files": ["dist"],
-    "scripts": {
-      "build": "tsc"
-    },
-    "peerDependencies": {
-      "typescript": ">=4.0.0"
-    },
-    "publishConfig": {
-      "access": "public"
-    }
+  "name": "@ml-toolkit-ts/preprocessing",
+  "version": "1.0.1",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": ["dist"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/antoinebcx/ml-toolkit-ts.git"
+  },
+  "homepage": "https://github.com/antoinebcx/ml-toolkit-ts#readme",
+  "scripts": {
+    "build": "tsc"
+  },
+  "peerDependencies": {
+    "typescript": ">=4.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
+}

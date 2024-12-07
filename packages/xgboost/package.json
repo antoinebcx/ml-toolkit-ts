@@ -1,18 +1,23 @@
 {
     "name": "@ml-toolkit-ts/xgboost",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
     "files": [
-        "dist"
+      "dist"
     ],
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/antoinebcx/ml-toolkit-ts.git"
+    },
+    "homepage": "https://github.com/antoinebcx/ml-toolkit-ts#readme",
     "scripts": {
-        "build": "tsc"
+      "build": "tsc"
     },
     "peerDependencies": {
-        "typescript": ">=4.0.0"
+      "typescript": ">=4.0.0"
     },
     "publishConfig": {
-        "access": "public"
+      "access": "public"
     }
-}
+  }

@@ -1,17 +1,22 @@
 {
   "name": "ml-toolkit-ts",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/antoinebcx/ml-toolkit-ts.git"
+  },
+  "homepage": "https://github.com/antoinebcx/ml-toolkit-ts#readme",
   "scripts": {
     "build": "tsc"
   },
   "dependencies": {
-    "@ml-toolkit-ts/xgboost": "^1.0.0",
-    "@ml-toolkit-ts/preprocessing": "^1.0.0"
+    "@ml-toolkit-ts/xgboost": "^1.0.2",
+    "@ml-toolkit-ts/preprocessing": "^1.0.1"
   },
   "publishConfig": {
     "access": "public"
