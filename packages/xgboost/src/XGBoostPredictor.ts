@@ -8,6 +8,7 @@ export class XGBoostPredictor {
   private baseScore: number;
   private objective: string;
   private isClassification: boolean;
+  private learningRate: number;
 
   constructor(modelJson: string) {
     try {
@@ -38,6 +39,17 @@ export class XGBoostPredictor {
 
       this.treeCache = new Map();
       this.baseScore = parseFloat(this.model.learner.attributes?.base_score || '0.5');
+
+      try {
+        if (this.model.learner.attributes?.scikit_learn) {
+          const scikitParams = JSON.parse(this.model.learner.attributes.scikit_learn);
+          this.learningRate = scikitParams.learning_rate || 0.1;
+        } else {
+          this.learningRate = 0.1;
+        }
+      } catch {
+        this.learningRate = 0.1;
+      }
 
     } catch (e) {
         throw new Error(`Failed to initialize XGBoost model: ${e instanceof Error ? e.message : 'Unknown error'}`);
@@ -127,14 +139,14 @@ export class XGBoostPredictor {
     if (this.numClasses === 1 || this.numClasses === 2) {
       let sum = this.baseScore;
       for (let i = 0; i < trees.length; i++) {
-        sum += this.traverseTreeWithCache(i, trees[i], features);
+        sum += this.traverseTreeWithCache(i, trees[i], features) * this.learningRate;
       }
       return [sum];
     } else {
       const margins = new Array(this.numClasses).fill(0);
       for (let i = 0; i < trees.length; i++) {
         const classIndex = treeInfo[i];
-        margins[classIndex] += this.traverseTreeWithCache(i, trees[i], features);
+        margins[classIndex] += this.traverseTreeWithCache(i, trees[i], features) * this.learningRate;
       }
       return margins;
     }
